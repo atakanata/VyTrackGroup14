@@ -12,7 +12,7 @@ public class VehiclesTruckDriverPage extends AbstractPageBase {
     @FindBy (className = "oro-subtitle")
     public WebElement carsHeader;
 
-    @FindBy (xpath = "//thead[@class='grid-header']/tr/th//span[@class='grid-header-cell__label']")
+    @FindBy (tagName = "thead")
     public List<WebElement> tableHeaders;
 
     @FindBy (xpath = "//ul[@class='icons-holder']/li[3]/a")
