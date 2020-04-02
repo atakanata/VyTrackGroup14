@@ -4,7 +4,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
 import qa.automation.pages.VehiclesPage;
-import qa.automation.tests.AbstractTestBase;
 
 public class VehiclePageTest extends AbstractTestBase {
 
