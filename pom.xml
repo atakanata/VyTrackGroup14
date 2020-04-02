@@ -55,6 +55,21 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.mraa.upm</groupId>
+            <artifactId>upm_utilities</artifactId>
+            <version>1.7.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
+
 
     </dependencies>
 
