@@ -66,6 +66,18 @@ public class VehiclesTruckDriverPage extends AbstractPageBase {
     @FindBy (xpath = "//input[contains(@id,'date_selector_oro_calendar_event_form_end-')]")
     public WebElement addEventEndDateInput;
 
+    @FindBy (xpath = "//input[contains(@id,'time_selector_oro_calendar_event_form_start-')]")
+    public WebElement addEventStartTimeInput;
+
+    @FindBy (xpath = "//input[contains(@id,'time_selector_oro_calendar_event_form_end-')]")
+    public WebElement addEventEndTimeInput;
+
+    @FindBy (xpath = "//div[@class='ui-timepicker-wrapper']/ul/li")
+    public List<WebElement> addEventStartTimePicker;
+
+    @FindBy (xpath = "//div[@class='ui-timepicker-wrapper ui-timepicker-positioned-top']/ul/li")
+    public List<WebElement> addEventEndTimePicker;
+
     public String getCarsHeaderText(){
         return carsHeader.getText();
     }
@@ -140,5 +152,21 @@ public class VehiclesTruckDriverPage extends AbstractPageBase {
 
     public WebElement getAddEventEndDateInput(){
         return addEventEndDateInput;
+    }
+
+    public WebElement getAddEventStartTimeInput(){
+        return addEventStartTimeInput;
+    }
+
+    public WebElement getAddEventEndTimeInput(){
+        return addEventEndTimeInput;
+    }
+
+    public List<WebElement> getAddEventStartTimePicker(){
+        return addEventStartTimePicker;
+    }
+
+    public List<WebElement> getAddEventEndTimePicker(){
+        return addEventEndTimePicker;
     }
 }
