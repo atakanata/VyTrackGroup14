@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBys;
 
 import java.util.List;
 
-public class VehiclesPage extends AbstractPageBase {
+public class VehiclesTruckDriverPage extends AbstractPageBase {
 
     @FindBy (className = "oro-subtitle")
     public WebElement carsHeader;
@@ -56,6 +56,15 @@ public class VehiclesPage extends AbstractPageBase {
 
     @FindBy (xpath = "//*[contains(@id,'oro_calendar_event_form_organizerEmail-')]")
     public WebElement addEventOrganizerEmailInput;
+
+    @FindBy (xpath = "//div[@id='select2-drop']//li")
+    public List<WebElement> addEventGuestTableBox;
+
+    @FindBy (xpath = "//input[contains(@id,'date_selector_oro_calendar_event_form_start-')]")
+    public WebElement addEventStartDateInput;
+
+    @FindBy (xpath = "//input[contains(@id,'date_selector_oro_calendar_event_form_end-')]")
+    public WebElement addEventEndDateInput;
 
     public String getCarsHeaderText(){
         return carsHeader.getText();
@@ -119,5 +128,17 @@ public class VehiclesPage extends AbstractPageBase {
 
     public WebElement getAddEventOrganizerEmailInput(){
         return addEventOrganizerEmailInput;
+    }
+
+    public List<WebElement> getAddEventGuestTableBox(){
+        return addEventGuestTableBox;
+    }
+
+    public WebElement getAddEventStartDateInput(){
+        return addEventStartDateInput;
+    }
+
+    public WebElement getAddEventEndDateInput(){
+        return addEventEndDateInput;
     }
 }
