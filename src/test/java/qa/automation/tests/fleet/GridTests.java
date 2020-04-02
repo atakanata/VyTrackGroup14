@@ -1,4 +1,8 @@
 package qa.automation.tests.fleet;
 
-public class GridTests {
+import qa.automation.tests.AbstractTestBase;
+
+public class GridTests extends AbstractTestBase {
+
+
 }
