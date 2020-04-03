@@ -13,24 +13,26 @@ import java.util.List;
 
 public class Us14_Ac1_Test extends AbstactTestBase {
 
-  LoginPage login = new LoginPage();
-  private By fleetModule = By.xpath("//span[@class='title title-level-1' and contains(text(),'Fleet')]");
-  private By subModules = By.cssSelector("dropdown-menu-title dropdown-menu-title-level-1");
-  private By subTitle = By.cssSelector("h1[class='oro-subtitle']");
-  @Test
-  public void vehicleModelPage(){
+    LoginPage login = new LoginPage();
+    private By fleetModule = By.xpath("//span[@class='title title-level-1' and contains(text(),'Fleet')]");
+    private By subModules = By.cssSelector("dropdown-menu-title dropdown-menu-title-level-1");
+    private By subTitle = By.cssSelector("h1[class='oro-subtitle']");
 
-      login.login("storemanager77", "UserUser123");
-      actions.moveToElement(Driver.getDriver().findElement(fleetModule)).perform();
-      BrowserUtils.wait(2);
-      Driver.getDriver().findElement(By.linkText("Vehicles Model")).click();
 
-      BrowserUtils.wait(2);
+    @Test
+    public void vehicleModelPage(){
 
-      String expected = "All Vehicles Model";
-      String actual = Driver.getDriver().findElement(subTitle).getText().trim();
+        login.login("storemanager77", "UserUser123");
+        actions.moveToElement(Driver.getDriver().findElement(fleetModule)).perform();
+        BrowserUtils.wait(2);
+        Driver.getDriver().findElement(By.linkText("Vehicles Model")).click();
 
-      Assert.assertEquals(expected,actual);
+        BrowserUtils.wait(2);
 
-  }
+        String expected = "All Vehicles Model";
+        String actual = Driver.getDriver().findElement(subTitle).getText().trim();
+
+        Assert.assertEquals(expected,actual);
+
+    }
 }
