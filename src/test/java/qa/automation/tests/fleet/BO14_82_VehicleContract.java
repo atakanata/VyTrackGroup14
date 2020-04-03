@@ -17,7 +17,7 @@ public class BO14_82_VehicleContract extends AbstactTestBase {
 
 
     @Test(description = "Verify that authorized user should not be able to access Vehicle Contract " +
-                        "(Note: Non authorized user; Truck driver)\n")
+                        "(Note: authorized users; store manager, sales manager)")
     public void us7_test1(){
         login.login("storemanager77","UserUser123");
 
@@ -28,8 +28,8 @@ public class BO14_82_VehicleContract extends AbstactTestBase {
         Assert.assertTrue(vehicleContractsPage.createContract.isDisplayed());
     }
 
-    @Test(description = "Verify that non-authorized user should be able to access Vehicle Contract." +
-                        "(Note: authorized users; store manager, sales manager)")
+    @Test(description = "Verify that unauthorized user shouldn't be able to access Vehicle Contract." +
+                        "(Note: Unauthorized user; Truck driver)")
     public void us7_test2(){
 
         login.login("driver1");
@@ -40,8 +40,6 @@ public class BO14_82_VehicleContract extends AbstactTestBase {
         Assert.assertEquals(vehicleContractsPage.permissionWarning.getText(),"You do not have permission to perform this action.");
 
     }
-
-
 
 
 }
