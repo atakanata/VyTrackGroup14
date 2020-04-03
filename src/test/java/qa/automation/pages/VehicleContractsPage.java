@@ -11,6 +11,10 @@ public class VehicleContractsPage extends AbstractPageBase {
     @FindBy(xpath = "//a[@class='btn main-group btn-primary pull-right ']")
     public WebElement createContract;
 
+    // unauthorized users get this alert message
+    @FindBy (xpath = "//*[@id='flash-messages']//div[contains(text(),'permission')]")
+    public WebElement permissionWarning;
+
     public String getAllVehiclesContractsHeader(){
         return tableHeader.getText();
     }

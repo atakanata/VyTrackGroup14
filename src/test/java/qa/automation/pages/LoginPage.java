@@ -36,7 +36,7 @@ public class LoginPage {
     /**
      * Method to login, version #1
      * Login as a specific user
-     *  This method can be usefull when properties has more passwords
+     *  This method can be useful when properties has more passwords
      * @param usernameValue
      * @param passwordValue
      */
@@ -57,4 +57,5 @@ public class LoginPage {
         BrowserUtils.waitForPageToLoad(10);
         BrowserUtils.wait(3);
     }
+
 }
