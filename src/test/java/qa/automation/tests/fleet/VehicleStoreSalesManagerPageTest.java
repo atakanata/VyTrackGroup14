@@ -40,19 +40,18 @@ navigate to Vehicle page */
         vehiclesInfo.getCreateCarButton().click();
         BrowserUtils.wait(3);
         vehiclesInfo.getLicencePlateInputBox().sendKeys("MyTestCar1");
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(2);
         vehiclesInfo.getFirstTagCheckBox();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(2);
         vehiclesInfo.getDriverInputBox().sendKeys("Adam A. Adams");
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(2);
         vehiclesInfo.getLocationInputBox().sendKeys("Georgia");
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(2);
         vehiclesInfo.getModelYearInputBox().sendKeys("2015");
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(2);
         vehiclesInfo.clickSaveAndCloseButton();
-        BrowserUtils.wait(3);
+        BrowserUtils.wait(1);
         System.out.println(vehiclesInfo.getEntitySavedMessage());
-        BrowserUtils.wait(3);
         Assert.assertEquals(vehiclesInfo.getEntitySavedMessage(),"Entity saved");
 
 

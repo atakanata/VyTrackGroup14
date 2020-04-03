@@ -33,7 +33,7 @@ public class VehiclesStoreSalesManagerPage extends AbstractPageBase{
     }
 //*****************************************************************************************************
 //
-    @FindBy(xpath = "//input[contains(@id='custom_entity_type_Tags_0-uid')]")
+    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Tags_0-uid')]")
     public WebElement tagsJuniorcheckBox;
 
     public void getFirstTagCheckBox(){
@@ -42,7 +42,7 @@ public class VehiclesStoreSalesManagerPage extends AbstractPageBase{
 
 //*****************************************************************************************************
 
-    @FindBy(xpath = "//input[contains(@id='custom_entity_type_Driver-uid')]")
+    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Driver-uid')]")
     public WebElement driverInputBox;
 
     public WebElement getDriverInputBox(){
@@ -50,7 +50,7 @@ public class VehiclesStoreSalesManagerPage extends AbstractPageBase{
     }
 
  //*****************************************************************************************************
-    @FindBy(xpath = "//input[contains(@id='custom_entity_type_Location-uid')]")
+    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Location-uid')]")
     public WebElement locationInputBox;
 
     public WebElement getLocationInputBox(){
@@ -59,14 +59,14 @@ public class VehiclesStoreSalesManagerPage extends AbstractPageBase{
 
  //*****************************************************************************************************
 
-    @FindBy(xpath = "//input[contains(@id='custom_entity_type_ModelYear-uid')]")
+    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_ModelYear-uid')]")
     public WebElement modelYearInputBox;
 
     public WebElement getModelYearInputBox(){
         return modelYearInputBox;
     }
 //*****************************************************************************************************
-    @FindBy(className = "btn btn-success action-button")
+    @FindBy(css = ".btn.btn-success.action-button")
     public WebElement saveAndCloseButton;
 
     public void clickSaveAndCloseButton(){
@@ -75,15 +75,12 @@ public class VehiclesStoreSalesManagerPage extends AbstractPageBase{
 
 //*****************************************************************************************************
 
-    @FindBy(className = "flash-messages-frame")
+    @FindBy(xpath = "//div[contains(text(),'saved')]")
     public WebElement entitySavedMessage;
 
     public String getEntitySavedMessage(){
         return entitySavedMessage.getText();
     }
 //*****************************************************************************************************
-
-
-
 
 }
