@@ -9,6 +9,7 @@ public class VehiclesPage extends AbstractPageBase {
     public WebElement carsHeader;
 
     public String getCarsHeaderText(){
+
         return carsHeader.getText();
     }
 }
