@@ -4,10 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
 import qa.automation.pages.VehiclesPage;
-import qa.automation.tests.AbstractTestBase;
+import qa.automation.tests.AbstactTestBase;
 import qa.automation.utilities.Driver;
 
-public class VerifyVehiclePageTitleTest extends AbstractTestBase {
+public class VerifyVehiclePageTitleTest extends AbstactTestBase {
     @Test
     public void VerifyVehiclePages() {
         LoginPage loginPage=new LoginPage();
