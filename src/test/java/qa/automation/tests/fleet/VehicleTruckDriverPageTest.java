@@ -1,14 +1,12 @@
 package qa.automation.tests.fleet;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
 import qa.automation.pages.VehiclesTruckDriverPage;
-import qa.automation.tests.AbstactTestBase;
+import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 import qa.automation.utilities.Driver;
 
@@ -18,7 +16,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class VehicleTruckDriverPageTest extends AbstactTestBase {
+public class VehicleTruckDriverPageTest extends AbstractTestBase {
 
     @Test (description = "US1 - AC1")
     public void verifySeeVehicleInfo(){

@@ -1,17 +1,14 @@
 package qa.automation.tests.fleet;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.tests.AbstactTestBase;
+import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 import qa.automation.utilities.Driver;
 
-import java.util.List;
-
-public class Us14_Ac1_Test extends AbstactTestBase {
+public class Us14_Ac1_Test extends AbstractTestBase {
 
     LoginPage login = new LoginPage();
     private By fleetModule = By.xpath("//span[@class='title title-level-1' and contains(text(),'Fleet')]");

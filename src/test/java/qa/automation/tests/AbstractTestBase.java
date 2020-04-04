@@ -16,7 +16,7 @@ import qa.automation.utilities.Driver;
 
 import java.io.IOException;
 
-public abstract class AbstactTestBase {
+public abstract class AbstractTestBase {
 
     protected WebDriverWait wait;
     protected Actions actions;
