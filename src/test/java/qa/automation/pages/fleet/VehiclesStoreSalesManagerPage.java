@@ -1,11 +1,12 @@
-package qa.automation.pages;
+package qa.automation.pages.fleet;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import qa.automation.pages.AbstractPageBase;
 
 import java.util.List;
 
-public class VehiclesStoreSalesManagerPage extends AbstractPageBase{
+public class VehiclesStoreSalesManagerPage extends AbstractPageBase {
 
     @FindBy(className= "grid-header-row")
     public WebElement allVehiclesHeader;

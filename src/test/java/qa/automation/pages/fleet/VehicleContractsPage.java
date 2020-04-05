@@ -1,7 +1,8 @@
-package qa.automation.pages;
+package qa.automation.pages.fleet;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import qa.automation.pages.AbstractPageBase;
 
 public class VehicleContractsPage extends AbstractPageBase {
 

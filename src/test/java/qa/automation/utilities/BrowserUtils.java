@@ -4,18 +4,21 @@ import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class BrowserUtils {
 
     /**
      * Pause test for some time
-     * Don't use if you don't need it. It's using Thread.sleep
+     *
      * @param seconds
      */
     public static void wait(int seconds) {
@@ -24,6 +27,20 @@ public class BrowserUtils {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * @param elements represents collection of WebElements
+     * @return collection of strings
+     */
+    public static List<String> getTextFromWebElements(List<WebElement> elements) {
+        List<String> textValues = new ArrayList<>();
+        for (WebElement element : elements) {
+            if (!element.getText().isEmpty()) {
+                textValues.add(element.getText());
+            }
+        }
+        return textValues;
     }
 
     /**
@@ -40,16 +57,42 @@ public class BrowserUtils {
             error.printStackTrace();
         }
     }
-    public static String getScreenShot(String name) {
+
+    /**
+     * Clicks on an element using JavaScript
+     *
+     * @param element
+     */
+    public static void clickWithJS(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+
+    /**
+     * Scroll to element using JavaScript
+     *
+     * @param element
+     */
+    public static void scrollTo(WebElement element) {
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+
+    /**
+     * @param name screenshot name
+     * @return path to the screenshot
+     */
+    public static String getScreenshot(String name) {
         //adding date and time to screenshot name, to make screenshot unique
-        name = new Date().toString().replace(" ", "_") + "_" + name;
+        name = new Date().toString().replace(" ", "_").replace(":", "-") + "_" + name;
         //where we gonna store a screenshot
         String path = "";
+
         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
             path = System.getProperty("user.dir") + "/test-output/screenshots/" + name + ".png";
         } else {
             path = System.getProperty("user.dir") + "\\test-output\\screenshots\\" + name + ".png";
         }
+
         System.out.println("OS name: " + System.getProperty("os.name"));
         System.out.println("Screenshot is here: " + path);
         //since our reference type is a WebDriver
@@ -67,6 +110,5 @@ public class BrowserUtils {
             e.printStackTrace();
         }
         return path;
-
     }
 }

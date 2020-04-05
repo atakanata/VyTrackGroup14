@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.pages.VehiclesTruckDriverPage;
+import qa.automation.pages.fleet.VehiclesTruckDriverPage;
 import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 import qa.automation.utilities.Driver;

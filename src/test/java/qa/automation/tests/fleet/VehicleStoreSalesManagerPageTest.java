@@ -4,7 +4,7 @@ package qa.automation.tests.fleet;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.pages.VehiclesStoreSalesManagerPage;
+import qa.automation.pages.fleet.VehiclesStoreSalesManagerPage;
 import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 

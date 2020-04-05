@@ -3,7 +3,7 @@ package qa.automation.tests.fleet;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.pages.VehicleContractsPage;
+import qa.automation.pages.fleet.VehicleContractsPage;
 import qa.automation.tests.AbstractTestBase;
 
 public class BO14_82_VehicleContract extends AbstractTestBase {
