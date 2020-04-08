@@ -4,11 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
 import qa.automation.pages.VehicleOdometerTruckDriverPage;
-import qa.automation.pages.VehiclesTruckDriverPage;
-import qa.automation.tests.AbstactTestBase;
+import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 
-public class US3_AC1_Test extends AbstactTestBase {
+public class US3_AC1_Test extends AbstractTestBase {
 
     @Test(description = "US3-AC1-AC2")
     public void driverSeeVehicleOdometerInfo(){
