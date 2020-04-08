@@ -7,10 +7,10 @@ import qa.automation.pages.VehicleOdometerTruckDriverPage;
 import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 
-public class US3_AC1_Test extends AbstractTestBase {
+public class US3_AC1_AC2_Test extends AbstractTestBase {
 
     @Test(description = "US3-AC1-AC2")
-    public void driverSeeVehicleOdometerInfo(){
+    public void driverSeeCreateAndCancelVehicleOdometerInfo(){
         LoginPage loginPage = new LoginPage();
         loginPage.login("driver2");
 
