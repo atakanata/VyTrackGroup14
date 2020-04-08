@@ -11,13 +11,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import qa.automation.utilities.BrowserUtils;
 import qa.automation.utilities.Driver;
 
-public class AbstractPageBase extends HomePage{
+public abstract class AbstractPageBase extends HomePage{
     protected WebDriver driver = Driver.getDriver();
 
     protected WebDriverWait wait = new WebDriverWait(driver,15);
 
     @FindBy(css="#user-menu > a")
     protected WebElement currentUser;
+
+
 
     public String getCurrentUserName(){
         BrowserUtils.waitForPageToLoad(10);

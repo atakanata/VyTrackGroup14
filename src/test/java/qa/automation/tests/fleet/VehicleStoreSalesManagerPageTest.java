@@ -1,18 +1,14 @@
 package qa.automation.tests.fleet;
 
 
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.pages.VehiclesStoreSalesManagerPage;
-import qa.automation.tests.AbstactTestBase;
+import qa.automation.pages.fleet.VehiclesStoreSalesManagerPage;
+import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class VehicleStoreSalesManagerPageTest extends AbstactTestBase {
+public class VehicleStoreSalesManagerPageTest extends AbstractTestBase {
 
     /*US2-AC1 Verify that Store manager or sales manager should be able to see all vehicle information once
 navigate to Vehicle page */

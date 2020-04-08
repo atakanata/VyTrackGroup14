@@ -1,17 +1,12 @@
 package qa.automation.tests.fleet;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.pages.VehicleContractsPage;
-import qa.automation.tests.AbstactTestBase;
-import qa.automation.utilities.BrowserUtils;
-import qa.automation.utilities.Driver;
+import qa.automation.pages.fleet.VehicleContractsPage;
+import qa.automation.tests.AbstractTestBase;
 
-public class BO14_82_VehicleContract extends AbstactTestBase {
+public class BO14_82_VehicleContract extends AbstractTestBase {
 
     LoginPage login = new LoginPage();
 

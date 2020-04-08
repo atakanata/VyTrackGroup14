@@ -1,11 +1,12 @@
 package qa.automation.tests.fleet;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.pages.VehiclesTruckDriverPage;
-import qa.automation.tests.AbstactTestBase;
+import qa.automation.pages.fleet.VehiclesTruckDriverPage;
+import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 import qa.automation.utilities.Driver;
 
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class VehicleTruckDriverPageTest extends AbstactTestBase {
+public class VehicleTruckDriverPageTest extends AbstractTestBase {
 
     @Test (description = "US1 - AC1")
     public void verifySeeVehicleInfo(){
@@ -28,7 +29,7 @@ public class VehicleTruckDriverPageTest extends AbstactTestBase {
         List<String> expectedTableHeaders = Arrays.asList("LICENSE PLATE","TAGS","DRIVER","LOCATION","CHASSIS NUMBER"
                 ,"MODEL YEAR","LAST ODOMETER","IMMATRICULATION DATE","FIRST CONTRACT DATE","CVVI"
                 ,"SEATS NUMBER","DOORS NUMBER","COLOR","TRANSMISSION","FUEL TYPE","CO2 EMISSIONS","HORSEPOWER"
-                ,"HORSEPOWER TAXATION","POWER (KW)");
+                ,"HORSEPOWER TAXATION","POWER (KW)","");
 
         List<WebElement> actualElements = vehiclesTruckDriverPage.getTableHeaders();
         List<String> actualTableHeaders = new ArrayList<>();
@@ -80,7 +81,7 @@ public class VehicleTruckDriverPageTest extends AbstactTestBase {
         Assert.assertEquals(vehiclesTruckDriverPage.getCarsHeaderText(),"Cars");
 
         Random a = new Random();
-        int index = a.nextInt(26);
+        int index = a.nextInt(25);
         vehiclesTruckDriverPage.getAnywhereInTheTableBody().get(index).click();
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -95,15 +96,62 @@ public class VehicleTruckDriverPageTest extends AbstactTestBase {
         for (WebElement webElement : guestsList) {
             if(webElement.getText().contains("Nancy Lee")){
                 webElement.click();
+                BrowserUtils.wait(2);
+                break;
             }
         }
-        BrowserUtils.wait(2);
-        Assert.assertEquals(vehiclesTruckDriverPage.getAddEventOwnerSelect().getText().trim(), vehiclesTruckDriverPage.getCurrentUserName().trim());
+        BrowserUtils.wait(4);
+        Assert.assertEquals(vehiclesTruckDriverPage.getAddEventOwnerSelect().getText().trim(), vehiclesTruckDriverPage.getCurrentUserName());
 
         vehiclesTruckDriverPage.getAddEventOrganizerNameInput().sendKeys("Enterprise");
         BrowserUtils.wait(2);
         vehiclesTruckDriverPage.getAddEventOrganizerEmailInput().sendKeys("enterprise@cybertekschool.com");
         BrowserUtils.wait(2);
+        vehiclesTruckDriverPage.getAddEventStartDateInput().click();
+        BrowserUtils.wait(2);
+        for (WebElement pickADate : vehiclesTruckDriverPage.getAddEventDatePicker()) {
+            if(pickADate.getText().equals("15")){
+                pickADate.click();
+                break;
+            }
+        }
+        BrowserUtils.wait(2);
+        vehiclesTruckDriverPage.getAddEventStartTimeInput().click();
+        BrowserUtils.wait(2);
+        for (WebElement pickATime : vehiclesTruckDriverPage.getAddEventStartTimePicker()) {
+            if(pickATime.getText().equals("10:00 AM")){
+                pickATime.click();
+                break;
+            }
+        }
+        BrowserUtils.wait(2);
+        vehiclesTruckDriverPage.getAddEventEndDateInput().click();
+        BrowserUtils.wait(2);
+        for (WebElement pickADate : vehiclesTruckDriverPage.getAddEventDatePicker()) {
+            if(pickADate.getText().equals("20")){
+                pickADate.click();
+                break;
+            }
+        }
+        BrowserUtils.wait(2);
+        vehiclesTruckDriverPage.getAddEventEndTimeInput().clear();
+        vehiclesTruckDriverPage.getAddEventEndTimeInput().sendKeys("10:00 AM", Keys.ENTER);
+        BrowserUtils.wait(2);
+//        for (WebElement pickATime : vehiclesTruckDriverPage.getAddEventEndTimePicker()) {
+//            Actions action = new Actions(Driver.getDriver());
+//            action.sendKeys(Keys.ARROW_UP);
+//            if(pickATime.getText().equals("10:00 AM")){
+//                pickATime.click();
+//                break;
+//            }
+//        }
+        BrowserUtils.wait(2);
+//        vehiclesTruckDriverPage.getSaveButton().click();
+//        BrowserUtils.wait(2);
+//        Assert.assertTrue(vehiclesTruckDriverPage.getFlashApprovalMessage().getText().contains("Calendar Event Saved"));
 
+        vehiclesTruckDriverPage.getActivityTab().click();
+        BrowserUtils.wait(2);
+        Assert.assertEquals(vehiclesTruckDriverPage.getTopicForApproval().getText().trim(),"5 Days Rental");
     }
 }
