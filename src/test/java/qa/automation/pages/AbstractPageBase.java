@@ -19,6 +19,20 @@ public abstract class AbstractPageBase extends HomePage{
     @FindBy(css="#user-menu > a")
     protected WebElement currentUser;
 
+    @FindBy(xpath = "//div[contains(text(),'You do not have permission to perform this action.')]")
+    protected WebElement accessDeniedMessage;
+
+    public WebElement getAccessDeniedMessage(){
+        return accessDeniedMessage;
+    }
+
+    @FindBy(className = "oro-subtitle")
+    protected WebElement menuHeader;
+
+    public WebElement getMenuHeader(){
+        return menuHeader;
+    }
+
 
 
     public String getCurrentUserName(){
