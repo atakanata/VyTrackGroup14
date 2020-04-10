@@ -17,6 +17,7 @@ public class VehicleContractsPage extends AbstractPageBase {
     public WebElement permissionWarning;
 
     public String getAllVehiclesContractsHeader(){
+
         return tableHeader.getText();
     }
 }

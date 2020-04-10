@@ -29,7 +29,7 @@ public class VehicleTruckDriverPageTest extends AbstractTestBase {
         List<String> expectedTableHeaders = Arrays.asList("LICENSE PLATE","TAGS","DRIVER","LOCATION","CHASSIS NUMBER"
                 ,"MODEL YEAR","LAST ODOMETER","IMMATRICULATION DATE","FIRST CONTRACT DATE","CVVI"
                 ,"SEATS NUMBER","DOORS NUMBER","COLOR","TRANSMISSION","FUEL TYPE","CO2 EMISSIONS","HORSEPOWER"
-                ,"HORSEPOWER TAXATION","POWER (KW)");
+                ,"HORSEPOWER TAXATION","POWER (KW)","");
 
         List<WebElement> actualElements = vehiclesTruckDriverPage.getTableHeaders();
         List<String> actualTableHeaders = new ArrayList<>();

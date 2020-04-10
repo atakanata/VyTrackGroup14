@@ -20,6 +20,22 @@ public abstract class AbstractPageBase extends HomePage{
     @FindBy(css="#user-menu > a")
     protected WebElement currentUser;
 
+    @FindBy(xpath = "//div[contains(text(),'You do not have permission to perform this action.')]")
+    protected WebElement accessDeniedMessage;
+
+    public WebElement getAccessDeniedMessage(){
+        return accessDeniedMessage;
+    }
+
+    @FindBy(className = "oro-subtitle")
+    protected WebElement menuHeader;
+
+    public WebElement getMenuHeader(){
+        return menuHeader;
+    }
+
+
+
     public String getCurrentUserName(){
         BrowserUtils.waitForPageToLoad(10);
         wait.until(ExpectedConditions.visibilityOf(currentUser));
@@ -37,6 +53,7 @@ public abstract class AbstractPageBase extends HomePage{
     public AbstractPageBase(){
         PageFactory.initElements(driver,this);
     }
+
     public void navigateTo(String tabName, String moduleName){
         String tabNameXpath = "//span[@class='title title-level-1' and contains(text(),'"+tabName+"')]";
         String moduleXpath = "//span[@class='title title-level-2' and text()='" + moduleName + "']";
@@ -44,10 +61,6 @@ public abstract class AbstractPageBase extends HomePage{
 
         WebElement tabElement = driver.findElement(By.xpath(tabNameXpath));
         WebElement moduleElement = driver.findElement(By.xpath(moduleXpath));
-
-
-
-
 
         Actions actions = new Actions(driver);
         BrowserUtils.wait(4);

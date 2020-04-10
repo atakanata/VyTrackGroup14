@@ -15,7 +15,7 @@ public class VehiclesTruckDriverPage extends AbstractPageBase {
     @FindBy (className = "oro-subtitle")
     public WebElement carsHeader;
 
-    @FindBy (tagName = "thead")
+    @FindBy (xpath = "//*[contains(@id,'grid-custom-entity-grid')]/div[2]/div[2]/div[2]/div/table/thead[1]/tr/th")
     public List<WebElement> tableHeaders;
 
     @FindBy (xpath = "//ul[@class='icons-holder']/li[3]/a")
