@@ -32,6 +32,6 @@ public class VehicleCostsTestUS6 extends AbstractTestBase {
         test.info("Verify the subtitle");
         String expected = "All Vehicle Costs";
         Assert.assertEquals(vehicleCostsPageUS6.getSubTitle().getText().trim(),expected);
-        test.pass("All the car's cost information verified");
+        test.pass("All the car's cost information verified");//test pass
     }
 }
