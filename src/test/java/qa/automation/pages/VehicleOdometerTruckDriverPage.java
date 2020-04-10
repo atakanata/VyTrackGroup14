@@ -78,9 +78,26 @@ public class VehicleOdometerTruckDriverPage extends AbstractPageBase {
    @FindBy(xpath = "//*[@id=\"flash-messages\"]/div/div")
     public WebElement entitySavedMessage;
 
+    @FindBy(xpath = "//a[@class='btn back icons-holder-text edit-button main-group']")
+    private WebElement editButton;
+
+    @FindBy(xpath = "(//div[@class='control-label'])[1]")
+    private WebElement savedOdometerValueElement;
+
     public WebElement getSavedMessage(){
         wait.until(ExpectedConditions.visibilityOf(entitySavedMessage));
+        System.out.println("entity saved message: " +entitySavedMessage.getText());
         return entitySavedMessage;
+    }
+
+
+
+
+    public void clickEditButton(){
+        editButton.click();
+    }
+    public String getSavedOdometerValue(){
+        return savedOdometerValueElement.getText();
     }
 
 
