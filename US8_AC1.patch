@@ -1,0 +1,617 @@
+Index: src/test/java/qa/automation/pages/VehiclesStoreSalesManagerPage.java
+===================================================================
+--- src/test/java/qa/automation/pages/VehiclesStoreSalesManagerPage.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/pages/VehiclesStoreSalesManagerPage.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
+@@ -1,86 +0,0 @@
+-package qa.automation.pages;
+-
+-import org.openqa.selenium.WebElement;
+-import org.openqa.selenium.support.FindBy;
+-
+-import java.util.List;
+-
+-public class VehiclesStoreSalesManagerPage extends AbstractPageBase{
+-
+-    @FindBy(className= "grid-header-row")
+-    public WebElement allVehiclesHeader;
+-
+-    public WebElement getAllVehiclesHeaderInfo(){
+-        return allVehiclesHeader;
+-    }
+-
+-//*****************************************************************************************************
+-
+- //   @FindBy(className = "btn main-group btn-primary pull-right")
+-     @FindBy(partialLinkText = "Create Car")
+-    public WebElement createCar;
+-
+-    public WebElement getCreateCarButton(){
+-        return createCar;
+-    }
+-//*****************************************************************************************************
+-
+-   @FindBy(xpath = "//input[contains(@id,'custom_entity_type_LicensePlate-uid')]")
+-    public WebElement licencePlateInputBox;
+-
+-    public WebElement getLicencePlateInputBox(){
+-        return licencePlateInputBox;
+-    }
+-//*****************************************************************************************************
+-//
+-    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Tags_0-uid')]")
+-    public WebElement tagsJuniorcheckBox;
+-
+-    public void getFirstTagCheckBox(){
+-        tagsJuniorcheckBox.click();
+-    }
+-
+-//*****************************************************************************************************
+-
+-    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Driver-uid')]")
+-    public WebElement driverInputBox;
+-
+-    public WebElement getDriverInputBox(){
+-        return driverInputBox;
+-    }
+-
+- //*****************************************************************************************************
+-    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Location-uid')]")
+-    public WebElement locationInputBox;
+-
+-    public WebElement getLocationInputBox(){
+-        return locationInputBox;
+-    }
+-
+- //*****************************************************************************************************
+-
+-    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_ModelYear-uid')]")
+-    public WebElement modelYearInputBox;
+-
+-    public WebElement getModelYearInputBox(){
+-        return modelYearInputBox;
+-    }
+-//*****************************************************************************************************
+-    @FindBy(css = ".btn.btn-success.action-button")
+-    public WebElement saveAndCloseButton;
+-
+-    public void clickSaveAndCloseButton(){
+-         saveAndCloseButton.click();
+-    }
+-
+-//*****************************************************************************************************
+-
+-    @FindBy(xpath = "//div[contains(text(),'saved')]")
+-    public WebElement entitySavedMessage;
+-
+-    public String getEntitySavedMessage(){
+-        return entitySavedMessage.getText();
+-    }
+-//*****************************************************************************************************
+-
+-}
+Index: src/test/java/qa/automation/pages/VehiclesTruckDriverPage.java
+===================================================================
+--- src/test/java/qa/automation/pages/VehiclesTruckDriverPage.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/pages/fleet/VehiclesTruckDriverPage.java	(date 1586010079649)
+@@ -1,10 +1,11 @@
+-package qa.automation.pages;
++package qa.automation.pages.fleet;
+ 
+ import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.support.FindAll;
+ import org.openqa.selenium.support.FindBy;
+ import org.openqa.selenium.support.FindBys;
+ import org.openqa.selenium.support.ui.ExpectedConditions;
++import qa.automation.pages.AbstractPageBase;
+ import qa.automation.utilities.BrowserUtils;
+ 
+ import java.util.List;
+Index: src/test/java/qa/automation/pages/VehicleContractsPage.java
+===================================================================
+--- src/test/java/qa/automation/pages/VehicleContractsPage.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/pages/fleet/VehicleContractsPage.java	(date 1586010079580)
+@@ -1,7 +1,8 @@
+-package qa.automation.pages;
++package qa.automation.pages.fleet;
+ 
+ import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.support.FindBy;
++import qa.automation.pages.AbstractPageBase;
+ 
+ public class VehicleContractsPage extends AbstractPageBase {
+ 
+Index: src/test/java/qa/automation/pages/fleet/VehiclesStoreSalesManagerPage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/pages/fleet/VehiclesStoreSalesManagerPage.java	(date 1586010079546)
++++ src/test/java/qa/automation/pages/fleet/VehiclesStoreSalesManagerPage.java	(date 1586010079546)
+@@ -0,0 +1,87 @@
++package qa.automation.pages.fleet;
++
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import qa.automation.pages.AbstractPageBase;
++
++import java.util.List;
++
++public class VehiclesStoreSalesManagerPage extends AbstractPageBase {
++
++    @FindBy(className= "grid-header-row")
++    public WebElement allVehiclesHeader;
++
++    public WebElement getAllVehiclesHeaderInfo(){
++        return allVehiclesHeader;
++    }
++
++//*****************************************************************************************************
++
++ //   @FindBy(className = "btn main-group btn-primary pull-right")
++     @FindBy(partialLinkText = "Create Car")
++    public WebElement createCar;
++
++    public WebElement getCreateCarButton(){
++        return createCar;
++    }
++//*****************************************************************************************************
++
++   @FindBy(xpath = "//input[contains(@id,'custom_entity_type_LicensePlate-uid')]")
++    public WebElement licencePlateInputBox;
++
++    public WebElement getLicencePlateInputBox(){
++        return licencePlateInputBox;
++    }
++//*****************************************************************************************************
++//
++    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Tags_0-uid')]")
++    public WebElement tagsJuniorcheckBox;
++
++    public void getFirstTagCheckBox(){
++        tagsJuniorcheckBox.click();
++    }
++
++//*****************************************************************************************************
++
++    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Driver-uid')]")
++    public WebElement driverInputBox;
++
++    public WebElement getDriverInputBox(){
++        return driverInputBox;
++    }
++
++ //*****************************************************************************************************
++    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_Location-uid')]")
++    public WebElement locationInputBox;
++
++    public WebElement getLocationInputBox(){
++        return locationInputBox;
++    }
++
++ //*****************************************************************************************************
++
++    @FindBy(xpath = "//input[contains(@id,'custom_entity_type_ModelYear-uid')]")
++    public WebElement modelYearInputBox;
++
++    public WebElement getModelYearInputBox(){
++        return modelYearInputBox;
++    }
++//*****************************************************************************************************
++    @FindBy(css = ".btn.btn-success.action-button")
++    public WebElement saveAndCloseButton;
++
++    public void clickSaveAndCloseButton(){
++         saveAndCloseButton.click();
++    }
++
++//*****************************************************************************************************
++
++    @FindBy(xpath = "//div[contains(text(),'saved')]")
++    public WebElement entitySavedMessage;
++
++    public String getEntitySavedMessage(){
++        return entitySavedMessage.getText();
++    }
++//*****************************************************************************************************
++
++}
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- pom.xml	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ pom.xml	(date 1586013299788)
+@@ -68,6 +68,11 @@
+             <scope>test</scope>
+         </dependency>
+ 
++        <dependency>
++            <groupId>com.aventstack</groupId>
++            <artifactId>extentreports</artifactId>
++            <version>4.0.4</version>
++        </dependency>
+ 
+ 
+ 
+Index: src/test/java/qa/automation/utilities/BrowserUtils.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/utilities/BrowserUtils.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/utilities/BrowserUtils.java	(date 1586011236358)
+@@ -4,18 +4,21 @@
+ import org.openqa.selenium.JavascriptExecutor;
+ import org.openqa.selenium.OutputType;
+ import org.openqa.selenium.TakesScreenshot;
++import org.openqa.selenium.WebElement;
+ import org.openqa.selenium.support.ui.ExpectedCondition;
+ import org.openqa.selenium.support.ui.WebDriverWait;
+ 
+ import java.io.File;
+ import java.io.IOException;
++import java.util.ArrayList;
+ import java.util.Date;
++import java.util.List;
+ 
+ public class BrowserUtils {
+ 
+     /**
+      * Pause test for some time
+-     * Don't use if you don't need it. It's using Thread.sleep
++     *
+      * @param seconds
+      */
+     public static void wait(int seconds) {
+@@ -26,6 +29,20 @@
+         }
+     }
+ 
++    /**
++     * @param elements represents collection of WebElements
++     * @return collection of strings
++     */
++    public static List<String> getTextFromWebElements(List<WebElement> elements) {
++        List<String> textValues = new ArrayList<>();
++        for (WebElement element : elements) {
++            if (!element.getText().isEmpty()) {
++                textValues.add(element.getText());
++            }
++        }
++        return textValues;
++    }
++
+     /**
+      * waits for backgrounds processes on the browser to complete
+      *
+@@ -40,16 +57,42 @@
+             error.printStackTrace();
+         }
+     }
+-    public static String getScreenShot(String name) {
++
++    /**
++     * Clicks on an element using JavaScript
++     *
++     * @param element
++     */
++    public static void clickWithJS(WebElement element) {
++        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
++        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
++    }
++
++    /**
++     * Scroll to element using JavaScript
++     *
++     * @param element
++     */
++    public static void scrollTo(WebElement element) {
++        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
++    }
++
++    /**
++     * @param name screenshot name
++     * @return path to the screenshot
++     */
++    public static String getScreenshot(String name) {
+         //adding date and time to screenshot name, to make screenshot unique
+-        name = new Date().toString().replace(" ", "_") + "_" + name;
++        name = new Date().toString().replace(" ", "_").replace(":", "-") + "_" + name;
+         //where we gonna store a screenshot
+         String path = "";
++
+         if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+             path = System.getProperty("user.dir") + "/test-output/screenshots/" + name + ".png";
+         } else {
+             path = System.getProperty("user.dir") + "\\test-output\\screenshots\\" + name + ".png";
+         }
++
+         System.out.println("OS name: " + System.getProperty("os.name"));
+         System.out.println("Screenshot is here: " + path);
+         //since our reference type is a WebDriver
+@@ -67,6 +110,5 @@
+             e.printStackTrace();
+         }
+         return path;
+-
+     }
+-}
++}
+\ No newline at end of file
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .gitignore	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ .gitignore	(date 1586011589226)
+@@ -1,3 +1,5 @@
+ .idea
+ *.iml
+-target
+\ No newline at end of file
++target
++.DS_Store
++test-output
+Index: src/test/java/qa/automation/tests/fleet/BO14_82_VehicleContract.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/tests/fleet/BO14_82_VehicleContract.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/tests/fleet/BO14_82_VehicleContract.java	(date 1586010079617)
+@@ -3,7 +3,7 @@
+ import org.testng.Assert;
+ import org.testng.annotations.Test;
+ import qa.automation.pages.LoginPage;
+-import qa.automation.pages.VehicleContractsPage;
++import qa.automation.pages.fleet.VehicleContractsPage;
+ import qa.automation.tests.AbstractTestBase;
+ 
+ public class BO14_82_VehicleContract extends AbstractTestBase {
+Index: src/test/java/qa/automation/tests/fleet/VehicleTruckDriverPageTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/tests/fleet/VehicleTruckDriverPageTest.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/tests/fleet/VehicleTruckDriverPageTest.java	(date 1586010079595)
+@@ -5,7 +5,7 @@
+ import org.testng.Assert;
+ import org.testng.annotations.Test;
+ import qa.automation.pages.LoginPage;
+-import qa.automation.pages.VehiclesTruckDriverPage;
++import qa.automation.pages.fleet.VehiclesTruckDriverPage;
+ import qa.automation.tests.AbstractTestBase;
+ import qa.automation.utilities.BrowserUtils;
+ import qa.automation.utilities.Driver;
+Index: src/test/java/qa/automation/tests/fleet/VehicleStoreSalesManagerPageTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/tests/fleet/VehicleStoreSalesManagerPageTest.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/tests/fleet/VehicleStoreSalesManagerPageTest.java	(date 1586010079632)
+@@ -4,7 +4,7 @@
+ import org.testng.Assert;
+ import org.testng.annotations.Test;
+ import qa.automation.pages.LoginPage;
+-import qa.automation.pages.VehiclesStoreSalesManagerPage;
++import qa.automation.pages.fleet.VehiclesStoreSalesManagerPage;
+ import qa.automation.tests.AbstractTestBase;
+ import qa.automation.utilities.BrowserUtils;
+ 
+Index: src/test/java/qa/automation/tests/AbstractTestBase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/tests/AbstractTestBase.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/tests/AbstractTestBase.java	(date 1586011439908)
+@@ -3,6 +3,8 @@
+ import com.aventstack.extentreports.ExtentReports;
+ import com.aventstack.extentreports.ExtentTest;
+ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
++
++import org.openqa.selenium.WebDriver;
+ import org.openqa.selenium.interactions.Actions;
+ import org.openqa.selenium.support.ui.WebDriverWait;
+ import org.testng.ITestResult;
+@@ -17,55 +19,58 @@
+ import java.io.IOException;
+ 
+ public abstract class AbstractTestBase {
+-
++    //will be visible in the subclass, regardless on subclass location (same package or no)
+     protected WebDriverWait wait;
+     protected Actions actions;
++
+     protected ExtentReports report;
+-    protected ExtentHtmlReporter  htmlReporter;
++    protected ExtentHtmlReporter htmlReporter;
+     protected ExtentTest test;
+ 
+     @BeforeTest
+-    public void setupTest(){
++    public void setupTest() {
+         report = new ExtentReports();
+         String reportPath = "";
+-        if(System.getProperty("os.name").toLowerCase().contains("win")){
++        //location of report file
++        if (System.getProperty("os.name").toLowerCase().contains("win")) {
+             reportPath = System.getProperty("user.dir") + "\\test-output\\report.html";
+-        }else{
++        } else {
+             reportPath = System.getProperty("user.dir") + "/test-output/report.html";
+         }
+-
++        //is a HTML report itself
+         htmlReporter = new ExtentHtmlReporter(reportPath);
++        //add it to the reporter
+         report.attachReporter(htmlReporter);
+         htmlReporter.config().setReportName("VYTRACK Test Automation Results");
+     }
+ 
+     @AfterTest
+-    public void afterTest(){
+-        report.flush();
++    public void afterTest() {
++        report.flush();//to release a report
+     }
+ 
+     @BeforeMethod
+-    public void setup(){
+-
+-        String URL = ConfigurationReader.getProperty("qa2");
++    public void setup() {
++        String URL = ConfigurationReader.getProperty("qa1");
+         Driver.getDriver().get(URL);
+         Driver.getDriver().manage().window().maximize();
+-        wait = new WebDriverWait(Driver.getDriver(),10);
++        wait = new WebDriverWait(Driver.getDriver(), 15);
+         actions = new Actions(Driver.getDriver());
+     }
+ 
++
+     @AfterMethod
+-    public void tearDown(ITestResult iTestResult) throws IOException {
+-
+-        if(iTestResult.getStatus() == ITestResult.FAILURE){
+-            String screenShotPath = BrowserUtils.getScreenShot(iTestResult.getName());
+-            test.fail(iTestResult.getName());
+-            BrowserUtils.wait(6);
+-            test.addScreenCaptureFromPath(screenShotPath,"Failed");
+-            test.fail(iTestResult.getThrowable());
++    public void teardown(ITestResult iTestResult) throws IOException {
++        //ITestResult class describes the result of a test.
++        //if test failed, take a screenshot
++        if (iTestResult.getStatus() == ITestResult.FAILURE) {
++            //screenshot will have a name of the test
++            String screenshotPath = BrowserUtils.getScreenshot(iTestResult.getName());
++            test.fail(iTestResult.getName());//attach test name that failed
++            BrowserUtils.wait(2);
++            test.addScreenCaptureFromPath(screenshotPath, "Failed");//attach screenshot
++            test.fail(iTestResult.getThrowable());//attach console output
+         }
+-
+         Driver.closeDriver();
+     }
+-
+-}
++}
+\ No newline at end of file
+Index: src/test/java/qa/automation/pages/fleet/VehicleContractsPageUS8.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/pages/fleet/VehicleContractsPageUS8.java	(date 1586046138753)
++++ src/test/java/qa/automation/pages/fleet/VehicleContractsPageUS8.java	(date 1586046138753)
+@@ -0,0 +1,30 @@
++package qa.automation.pages.fleet;
++
++import org.openqa.selenium.By;
++import org.openqa.selenium.WebElement;
++import org.openqa.selenium.support.FindBy;
++import org.openqa.selenium.support.ui.ExpectedConditions;
++import qa.automation.pages.AbstractPageBase;
++import qa.automation.utilities.BrowserUtils;
++
++import java.util.List;
++
++public class VehicleContractsPageUS8 extends AbstractPageBase {
++
++    @FindBy(className = "grid-header-cell__label")
++    private List<WebElement> columnNames;
++
++    @FindBy(css = "[id='grid-custom-entity-grid-1361993564']")
++    private WebElement vehicleContractGrid;
++
++    public List<String> getColumnNames() {
++        BrowserUtils.waitForPageToLoad(20);
++        wait.until(ExpectedConditions.elementToBeClickable(By.className("grid-header-cell__label")));
++        return BrowserUtils.getTextFromWebElements(columnNames);
++    }
++    public WebElement getVehicleContractGrid(){
++        BrowserUtils.waitForPageToLoad(20);
++        return vehicleContractGrid;
++
++    }
++}
+\ No newline at end of file
+Index: src/test/java/qa/automation/tests/fleet/VehicleContractsTestUS8.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/tests/fleet/VehicleContractsTestUS8.java	(date 1586046984412)
++++ src/test/java/qa/automation/tests/fleet/VehicleContractsTestUS8.java	(date 1586046984412)
+@@ -0,0 +1,50 @@
++package qa.automation.tests.fleet;
++
++import org.openqa.selenium.WebElement;
++import org.testng.Assert;
++import org.testng.annotations.Test;
++import qa.automation.pages.LoginPage;
++import qa.automation.pages.fleet.VehicleContractsPageUS8;
++import qa.automation.tests.AbstractTestBase;
++import qa.automation.utilities.Driver;
++
++import java.util.Arrays;
++import java.util.List;
++
++public class VehicleContractsTestUS8 extends AbstractTestBase {
++
++
++
++    @Test(description = "AC1: Verify that authorized user should be able to access Vehicle Contract page")
++    public void verifyTitle() {
++        test = report.createTest("Verify page title");
++        LoginPage loginPage = new LoginPage();
++        VehicleContractsPageUS8 vehicleContractsPageUS8 = new VehicleContractsPageUS8();
++        loginPage.login("salesmanager1");
++        vehicleContractsPageUS8.navigateTo("Fleet", "Vehicle Contracts");
++
++        String expectedTitle = "All - Vehicle Contract - Entities - System - Car - Entities - System";
++        String actualTitle = Driver.getDriver().getTitle();
++
++        Assert.assertEquals(actualTitle, expectedTitle);
++        test.pass("Page title Dashboard was verified");
++    }
++
++    @Test(description = "AC1: Verify that authorized user should be able to see all vehicle contracts on the grid.")
++    public void verifyVehicleContractsOnTheGrid() {
++        test = report.createTest("Verify column names");
++
++        LoginPage loginPage = new LoginPage();
++        VehicleContractsPageUS8 vehicleContractsPageUS8 = new VehicleContractsPageUS8();
++
++        loginPage.login("salesmanager1");
++        vehicleContractsPageUS8.navigateTo("Fleet", "Vehicle Contracts");
++
++        List<String> expectedColamnNames = Arrays.asList("TYPE", "RESPONSIBLE", "ACTIVATION COST", "RCAD",
++                "RECURRING COST AMOUNT","ODOMETER DETAILS", "INOVICE DATE","CONTRACT START DATE", "CONTRACT EXPIRATION DATE",
++                "VENDOR", "DRIVER","CONTRACT REFERENCE", "SERVICE", "STATUS");
++        System.out.println("actual: "+vehicleContractsPageUS8.getColumnNames()+"expected: "+expectedColamnNames);;
++        Assert.rassertEquals(vehicleContractsPageUS8.getColumnNames(),expectedColamnNames);
++        test.pass("Column names verified");
++    }
++}
+\ No newline at end of file
+Index: src/test/java/qa/automation/pages/AbstractPageBase.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/test/java/qa/automation/pages/AbstractPageBase.java	(revision 35a36892a795792573d6e5d783cfea8a0637cbb8)
++++ src/test/java/qa/automation/pages/AbstractPageBase.java	(date 1586009965623)
+@@ -11,7 +11,7 @@
+ import qa.automation.utilities.BrowserUtils;
+ import qa.automation.utilities.Driver;
+ 
+-public class AbstractPageBase extends HomePage{
++public abstract class AbstractPageBase extends HomePage{
+     protected WebDriver driver = Driver.getDriver();
+ 
+     protected WebDriverWait wait = new WebDriverWait(driver,15);

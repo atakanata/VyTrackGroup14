@@ -1,14 +1,12 @@
 package qa.automation.tests.fleet;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import qa.automation.pages.LoginPage;
-import qa.automation.pages.VehiclesTruckDriverPage;
-import qa.automation.tests.AbstactTestBase;
+import qa.automation.pages.fleet.VehiclesTruckDriverPage;
+import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
 import qa.automation.utilities.Driver;
 
@@ -18,7 +16,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class VehicleTruckDriverPageTest extends AbstactTestBase {
+public class VehicleTruckDriverPageTest extends AbstractTestBase {
 
     @Test (description = "US1 - AC1")
     public void verifySeeVehicleInfo(){
@@ -31,7 +29,7 @@ public class VehicleTruckDriverPageTest extends AbstactTestBase {
         List<String> expectedTableHeaders = Arrays.asList("LICENSE PLATE","TAGS","DRIVER","LOCATION","CHASSIS NUMBER"
                 ,"MODEL YEAR","LAST ODOMETER","IMMATRICULATION DATE","FIRST CONTRACT DATE","CVVI"
                 ,"SEATS NUMBER","DOORS NUMBER","COLOR","TRANSMISSION","FUEL TYPE","CO2 EMISSIONS","HORSEPOWER"
-                ,"HORSEPOWER TAXATION","POWER (KW)");
+                ,"HORSEPOWER TAXATION","POWER (KW)","");
 
         List<WebElement> actualElements = vehiclesTruckDriverPage.getTableHeaders();
         List<String> actualTableHeaders = new ArrayList<>();

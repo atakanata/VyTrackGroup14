@@ -1,10 +1,11 @@
-package qa.automation.pages;
+package qa.automation.pages.fleet;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import qa.automation.pages.AbstractPageBase;
 import qa.automation.utilities.BrowserUtils;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class VehiclesTruckDriverPage extends AbstractPageBase {
     @FindBy (className = "oro-subtitle")
     public WebElement carsHeader;
 
-    @FindBy (tagName = "thead")
+    @FindBy (xpath = "//*[contains(@id,'grid-custom-entity-grid')]/div[2]/div[2]/div[2]/div/table/thead[1]/tr/th")
     public List<WebElement> tableHeaders;
 
     @FindBy (xpath = "//ul[@class='icons-holder']/li[3]/a")
