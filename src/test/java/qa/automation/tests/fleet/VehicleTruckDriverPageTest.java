@@ -78,6 +78,7 @@ public class VehicleTruckDriverPageTest extends AbstractTestBase {
         loginPage.login("driver1");
         VehiclesTruckDriverPage vehiclesTruckDriverPage = new VehiclesTruckDriverPage();
         vehiclesTruckDriverPage.navigateTo("Fleet", "Vehicles");
+        BrowserUtils.wait(20);
         Assert.assertEquals(vehiclesTruckDriverPage.getCarsHeaderText(),"Cars");
 
         Random a = new Random();

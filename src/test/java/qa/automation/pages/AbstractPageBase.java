@@ -25,6 +25,14 @@ public abstract class AbstractPageBase extends HomePage{
         return currentUser.getText().trim();
     }
 
+    @FindBy(tagName ="h1" )
+    protected WebElement pageLogo;
+
+    public String getPageLogo(){
+        return pageLogo.getText();
+    }
+
+
     public AbstractPageBase(){
         PageFactory.initElements(driver,this);
     }
