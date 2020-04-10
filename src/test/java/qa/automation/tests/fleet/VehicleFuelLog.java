@@ -1,15 +1,11 @@
 package qa.automation.tests.fleet;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import qa.automation.pages.AbstractPageBase;
 import qa.automation.pages.LoginPage;
 import qa.automation.tests.AbstractTestBase;
 import qa.automation.utilities.BrowserUtils;
-import org.openqa.selenium.chrome.ChromeDriver;
 import qa.automation.utilities.Driver;
 
 public class VehicleFuelLog extends AbstractTestBase {
@@ -32,8 +28,6 @@ public class VehicleFuelLog extends AbstractTestBase {
 
         String expected = "Vehicle Fuel Logs";
         String actual = Driver.getDriver().findElement(subTitle).getText().trim();
-
-
         Assert.assertEquals(expected,actual);
 
     }

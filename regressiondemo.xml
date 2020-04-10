@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="regression demo">
+
+    <test name="demo">
+            <classes> 
+                 <class name="qa.automation.tests.fleet.BO14_82_VehicleContract">
+                        <methods>
+                            <exclude name="us7_test1"></exclude>
+                        </methods>
+                  </class>
+                  <class name="qa.automation.tests.activities.CalendarEventsTests" />
+                  <class name="qa.automation.tests.fleet.VehicleOdometerPageAccessLevels">
+                      <methods>
+                          <exclude name="verifyTruckDriver"></exclude>
+                          <exclude name="managerCredentials"></exclude>
+                          <exclude name="odometerValues"></exclude>
+                          <exclude name="odometerCreationAndEditingAsATruckDriver"></exclude>
+                      </methods>
+                  </class>
+            </classes>
+    </test>
+
+</suite>
